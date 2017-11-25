@@ -5,7 +5,7 @@
       "url": "git@github.com:Volonda/object-builder-bundle.git"
     }
   ],
-  "name": "volonda/object-builder-bundle.git",
+  "name": "volonda/object-builder-bundle",
   "type": "symfony-bundle",
   "description": "Symfony Object Builder Bundle",
   "require": {
