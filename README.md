@@ -9,7 +9,6 @@ $this->get(ObjectBuilder::class)->toDTO($entityObject, DTO::class);
 
 Пример DTO
 
-<?php
 namespace VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO;
 
 use VolondaObjectBuilderBundle\ObjectBuilder\Annotation as DTO;
