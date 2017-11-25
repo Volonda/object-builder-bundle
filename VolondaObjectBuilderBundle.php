@@ -1,6 +1,6 @@
 <?php
 
-namespace Volonda\ObjectBuilderBundle;
+namespace VolondaObjectBuilderBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
