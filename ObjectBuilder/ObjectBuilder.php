@@ -6,7 +6,6 @@ use VolondaObjectBuilderBundle\ObjectBuilder\Command\CreateEntityCommand;
 use VolondaObjectBuilderBundle\ObjectBuilder\Reader\DTOMetadataReader;
 use VolondaObjectBuilderBundle\ObjectBuilder\Reader\ORMMetadataReader;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Mapping as ORM;
 
 class ObjectBuilder
 {
@@ -20,30 +19,34 @@ class ObjectBuilder
     }
 
     /**
-     * @param $source
-     * @param string $className
+     * Convert to Entity
+     *
+     * @param $DTOObject
+     * @param string $rootDtoClassName
      * @return mixed
      */
-    public function toEntity($source, string $className)
+    public function toEntity($DTOObject, string $rootDtoClassName)
     {
         $reader = new ORMMetadataReader($this->em);
 
-        $command = new CreateEntityCommand($className, $reader);
+        $command = new CreateEntityCommand($rootDtoClassName, $reader);
 
-        return $command->execute($source);
+        return $command->execute($DTOObject);
     }
 
     /**
-     * @param $source
-     * @param string $className
+     * Convert to DTO
+     *
+     * @param $entityObject
+     * @param string $rootEntityClassName
      * @return mixed
      */
-    public function toDTO($source, string $className)
+    public function toDTO($entityObject, string $rootEntityClassName)
     {
         $reader = new DTOMetadataReader();
 
-        $command = new CreateDTOCommand($className, $reader);
+        $command = new CreateDTOCommand($rootEntityClassName, $reader);
 
-        return $command->execute($source);
+        return $command->execute($entityObject);
     }
 }
