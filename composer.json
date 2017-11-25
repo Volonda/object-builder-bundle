@@ -10,7 +10,8 @@
   "description": "Symfony Object Builder Bundle",
   "require": {
     "php": "^7.0",
-    "symfony/symfony": "^3.2"
+    "symfony/symfony": "^3.2",
+    "doctrine/annotations": "^1.5"
   },
   "autoload": {
     "psr-4": {
