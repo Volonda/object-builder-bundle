@@ -1,0 +1,20 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:Volonda/object-builder-bundle.git"
+    }
+  ],
+  "name": "volonda/object-builder-bundle.git",
+  "type": "symfony-bundle",
+  "description": "Symfony Object Builder Bundle",
+  "require": {
+    "php": "^7.0",
+    "symfony/symfony": "^3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "VolondaObjectBuilderBundle\\": ""
+    }
+  }
+}
