@@ -15,6 +15,9 @@ class CreateDTOCommand
     /** @var DTOMetadataReader*/
     private $reader;
 
+    /** @var PropertyAccessor*/
+    private $accessor;
+
     /**
      * CreateDTOCommand constructor.
      * @param string $className

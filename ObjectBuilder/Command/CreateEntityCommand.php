@@ -49,6 +49,7 @@ class CreateEntityCommand
 
 
         foreach ($sourceVars as $property => $value) {
+
             if (
                 $this->accessor->isWritable($entity, $property)
                 && isset($metadata->reflFields[$property])
@@ -73,6 +74,7 @@ class CreateEntityCommand
      */
     private function setFieldValue($entity, $property, $value, $metadata) : void
     {
+
         if (isset($metadata->associationMappings[$property])) {
 
             $className = $metadata->associationMappings[$property]['targetEntity'];
@@ -80,11 +82,13 @@ class CreateEntityCommand
 
             if (is_iterable($value)) {
 
-                $value = new ArrayCollection();
+                $collection = new ArrayCollection();
 
                 foreach ($value as $v) {
-                    $value->add($command->execute($v));
+                    $collection->add($command->execute($v));
                 }
+
+                $value = $collection;
             } else {
                 $value = $command->execute($value);
             }
