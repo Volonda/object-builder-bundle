@@ -7,32 +7,32 @@
 
 $this->get(ObjectBuilder::class)->toDTO($entityObject, DTO::class); 
 
-Пример DTO
+**Пример DTO**
 
-namespace VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO;
+    namespace VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO;
+    
+    use VolondaObjectBuilderBundle\ObjectBuilder\Annotation as DTO;
 
-use VolondaObjectBuilderBundle\ObjectBuilder\Annotation as DTO;
-
-class UserDTO
-{
-    /** string*/
-    public $username;
-
-    /**
-     * @DTO\DTOClass("VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO\UserDataDTO")
-     * @DTO\DTOType("relation")
-     * @var UserDataDTO
-     */
-    public $data;
-
-    /**
-     * @DTO\DTOClass("VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO\FileDTO")
-     * @DTO\DTOType("collection")
-     *
-     * @var array
-     */
-    public $files;
-}
+    class UserDTO
+    {
+        /** string*/
+        public $username;
+    
+        /**
+         * @DTO\DTOClass("VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO\UserDataDTO")
+         * @DTO\DTOType("relation")
+         * @var UserDataDTO
+         */
+        public $data;
+    
+        /**
+         * @DTO\DTOClass("VolondaObjectBuilderBundle\Tests\ObjectBuilder\DTO\FileDTO")
+         * @DTO\DTOType("collection")
+         *
+         * @var array
+         */
+        public $files;
+    }
 
 
 **Конвертация DTO -> Entity**
